@@ -44,7 +44,6 @@ const App = () => {
   const tanggu = new Audio(Tanggu);
   let [looper, setLooper] = useState([]);
   const [isplaying, setIsPlaying] = useState(false);
-  const [isanimate, setIsanimate] = useState(true);
   const addToLoop = (audio, id) => {
     let selectedPad = document.querySelector(id);
     if (selectedPad.checked) {
@@ -68,7 +67,7 @@ const App = () => {
       if (looper.length === 0) {
         setIsPlaying(false);
         setLooper([]);
-        setIsanimate(true);
+
       }
 
 
@@ -76,7 +75,6 @@ const App = () => {
   };
 
   const play = () => {
-    setIsanimate(false);
     if (looper.length !== 0) {
       setIsPlaying(true);
       looper.forEach((sound) => {
@@ -99,7 +97,6 @@ const App = () => {
   };
 
   const stop = () => {
-    setIsanimate(true);
     setIsPlaying(false);
     looper.forEach((sound) => {
       sound.pause();
@@ -124,15 +121,15 @@ const App = () => {
         <div className={classes.root}>
           <Grid container alignItems="center" justify="center" spacing={3}>
             <Grid item s>
-              <label>Break Beats</label>
+              <label hidden={isplaying}>Break Beats</label>
               <input id='breakbeats' onClick={() => addToLoop(breakbeats, '#breakbeats')} type="checkbox" />
             </Grid>
             <Grid item s>
-              <label>electric Guitar</label>
+              <label hidden={isplaying}>electric Guitar</label>
               <input id='electricGuitar' onClick={() => addToLoop(electricGuitar, '#electricGuitar')} type="checkbox" />
             </Grid>
             <Grid item s>
-              <label>funk</label>
+              <label hidden={isplaying}>funk</label>
               <input id='funk' onClick={() => addToLoop(funk, '#funk')} type="checkbox" />
             </Grid>
             <Grid item s>
@@ -143,15 +140,15 @@ const App = () => {
           </Grid>
           <Grid container alignItems="center" justify="center" spacing={3}>
             <Grid item s>
-              <label>Maze Politics</label>
+              <label hidden={isplaying}>Maze Politics</label>
               <input id='mazePolitics' onClick={() => addToLoop(mazePolitics, '#mazePolitics')} type="checkbox" />
             </Grid>
             <Grid item s>
-              <label>pas groov</label>
+              <label hidden={isplaying}>pas groov</label>
               <input id='pasGroove' onClick={() => addToLoop(pasGroove, '#pasGroove')} type="checkbox" />
             </Grid>
             <Grid item s>
-              <label>organ</label>
+              <label hidden={isplaying}>organ</label>
               <input id='organ' onClick={() => addToLoop(organ, '#organ')} type="checkbox" />
             </Grid>
             <Grid item s>
@@ -160,15 +157,15 @@ const App = () => {
           </Grid>
           <Grid container alignItems="center" justify="center" spacing={3}>
             <Grid item s>
-              <label>stompy</label>
+              <label hidden={isplaying}>stompy</label>
               <input id='stompy' onClick={() => addToLoop(stompy, '#stompy')} type="checkbox" />
             </Grid>
             <Grid item s>
-              <label>Tanggu</label>
+              <label hidden={isplaying}>Tanggu</label>
               <input id='tanggu' onClick={() => addToLoop(tanggu, '#tanggu')} type="checkbox" />
             </Grid>
             <Grid item s>
-              <label >heavy Funk</label>
+              <label hidden={isplaying}>heavy Funk</label>
               <input id='heavyFunk' onClick={() => addToLoop(heavyFunk, '#heavyFunk')} type="checkbox" />
             </Grid>
             <Grid item s>
@@ -176,7 +173,7 @@ const App = () => {
             </Grid>
           </Grid>
         </div>
-        <img hidden={isanimate} src="https://cdn.dribbble.com/users/619527/screenshots/4531991/neta-900-1.gif" class="woot-dance" width="328" height="272" alt="8-bit" />
+        <img hidden={!isplaying} src="https://cdn.dribbble.com/users/619527/screenshots/4531991/neta-900-1.gif" class="woot-dance" width="328" height="272" alt="8-bit" />
       </Container>
     </>
   );

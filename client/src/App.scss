@@ -75,7 +75,6 @@ input:checked:before  {
   filter: blur(10px);
   opacity: 1;
   animation: animate 12s linear infinite;
-  font-size: 0;
 }
 
 
@@ -123,6 +122,8 @@ label {
       font-size: 1rem;
     } 
 }
+
+
 
 
 .button{
