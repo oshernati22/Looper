@@ -131,7 +131,7 @@ const App = () => {
               <input id='electricGuitar' onClick={() => addToLoop(electricGuitar, '#electricGuitar')} type="checkbox" />
             </Grid>
             <Grid item s>
-              <label hidden={isplaying}>funk</label>
+              <label hidden={isplaying}>funki funk</label>
               <input id='funk' onClick={() => addToLoop(funk, '#funk')} type="checkbox" />
             </Grid>
             <Grid item s>
@@ -150,7 +150,7 @@ const App = () => {
               <input id='pasGroove' onClick={() => addToLoop(pasGroove, '#pasGroove')} type="checkbox" />
             </Grid>
             <Grid item s>
-              <label hidden={isplaying}>organ</label>
+              <label hidden={isplaying}> Silent Star </label>
               <input id='organ' onClick={() => addToLoop(organ, '#organ')} type="checkbox" />
             </Grid>
             <Grid item s>
@@ -159,11 +159,11 @@ const App = () => {
           </Grid>
           <Grid container alignItems="center" justify="center" spacing={3}>
             <Grid item s>
-              <label hidden={isplaying}>stompy</label>
+              <label hidden={isplaying}>stompy Slosh</label>
               <input id='stompy' onClick={() => addToLoop(stompy, '#stompy')} type="checkbox" />
             </Grid>
             <Grid item s>
-              <label hidden={isplaying}>Tanggu</label>
+              <label hidden={isplaying}>bambook tang </label>
               <input id='tanggu' onClick={() => addToLoop(tanggu, '#tanggu')} type="checkbox" />
             </Grid>
             <Grid item s>
