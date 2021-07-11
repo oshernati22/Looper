@@ -1,0 +1,108 @@
+
+//MIXISINE
+
+
+
+@mixin clearfix {
+  &::after{
+    content: "";
+    display: table;
+    clear: both;
+  }  
+}
+
+
+
+
+
+// MEDIA QUERY MANAGER
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+ORDER: Base + typography > general layout + grid > page layout > components
+1em = 16px
+*/
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+      @media only screen and (max-width: 37.5em) { @content };    //600px
+  }
+  @if $breakpoint == tab-port {
+      @media only screen and (max-width: 56.25em) { @content };     //900px
+  }
+  @if $breakpoint == tab-land {
+      @media only screen and (max-width: 75em) { @content };    //1200px
+  }
+  @if $breakpoint == big-desktop {
+      @media only screen and (min-width: 112.5em) { @content };    //1800
+  }
+}
+
+
+///text alighnments
+
+.u-center-text { text-align: center }
+
+.u-margin-bottom-small { margin-bottom: 1.5rem !important; }
+.u-margin-bottom-medium {
+  margin-bottom: 4rem !important;
+
+  @include respond(tab-port) {
+      margin-bottom: 3rem !important;
+  }
+}
+
+.u-margin-bottom-big { 
+  margin-bottom: 8rem !important;
+
+  @include respond(tab-port) {
+      margin-bottom: 5rem !important;
+  }
+}
+
+.u-margin-top-big { margin-top: 8rem !important; }
+.u-margin-top-huge { margin-top: 10rem !important; }
+
+
+
+
+//VARIABELS
+
+
+//COLORS
+$color-primary:salmon;
+$color-primary-light: #6dd4fa73 ;
+$color-primary-dark:#297fb979 ;
+
+$color-secondary-light:#093028;  
+$color-secondary-dark:#237A57;
+
+$color-tertiary-light:#141E30;  
+$color-tertiary-dark:#243B55;
+
+$color-grey-dark:#777;
+$color-grey-dark-2:#999;
+$color-grey-dark-3:#333;
+
+$color-grey-light-1:#f7f7f7 ;
+$color-grey-light-2:#eee ;
+
+$color-black:#000;
+$color-white: white;
+
+
+//FONT 
+$default-font-size:1.6rem;
+
+//GRID
+$grid-width: 114rem;
+$gutter-vertical: 8rem; 
+$gutter-vertical-small: 6rem; 
+$gutter-horizontal: 6rem;
