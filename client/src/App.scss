@@ -1,5 +1,6 @@
 
 @import "./utilitis.scss";
+
 //view port for responsive rem help
 html {
   // This defines what 1rem is
@@ -18,23 +19,27 @@ html {
   }
 }
 
-.container{
+.container{ //main container
   background-image: url(https://cdn.pixabay.com/photo/2015/07/02/10/13/sky-828648_960_720.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   margin-top:2rem;
   border-radius: 10px;
   opacity: 0.9;
+  height: 90rem;
   @include respond(phone) {
-    height: 100%;
+    height: 100rem;
   } 
+  @include respond(tab-land) { 
+    height: 100rem;
+}
 }
 //https://cdn.dribbble.com/users/619527/screenshots/4531991/neta-900-1.gif
-.header{
+.header{ 
   background-color: transparent;
   text-align: center;
 
-  &__head{
+  &__head{ //title
     font-size: 6rem;
     text-transform: uppercase;
     font-weight: 700;
@@ -54,7 +59,7 @@ html {
     }
 
     &:hover{
-        transform: skewY(2deg) skewX(15deg) scale(1.1);
+        transform: skewY(2deg) skewX(15deg) scale(1.1); 
         text-shadow: .5rem 1rem 2rem rgba($color-black,  .2  );
     }
    
@@ -73,14 +78,14 @@ html {
 }
 
 
-input:checked:before  {
+input:checked:before  { //when the input check blur
   filter: blur(10px);
   opacity: 1;
   animation: animate 12s linear infinite;
 }
 
 
-input:before {
+input:before { //when :checked make the pad pressed
   content: "";
   position: absolute;   
   top: -5px;
@@ -136,7 +141,7 @@ label {
 }
 
 
-@keyframes dance { 
+@keyframes dance {  //move the gif to the sides 
   0% {
     transform: translateX(200);
   }
@@ -145,7 +150,7 @@ label {
   }
 }
 
-.woot-dance { 
+.gif_dance { //gif
   margin: 2rem;
   border-radius: 30rem;
   background-color:transparent;
