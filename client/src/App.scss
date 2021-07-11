@@ -93,7 +93,8 @@ input:before { //when :checked make the pad pressed
   bottom: -5px;
   right: -5px;
   z-index: -1;
-  background: linear-gradient(90deg, #03a9f4, #f441a5, #F16529, #03a9f4);
+  background: -webkit-linear-gradient(90deg, #03a9f4, #f441a5, #F16529, #03a9f4);
+  background:linear-gradient(90deg, #03a9f4, #f441a5, #F16529, #03a9f4);
   background-size: 400%;
   transition: 0.5s;
 }
@@ -101,6 +102,7 @@ input {
   height: 12rem;
   width: 12rem;
   transform: translate(0%, 0%);
+  background: -webkit-linear-gradient(90deg, #03a9f4, #f441a5, #F16529, #03a9f4);
   background: linear-gradient(90deg, #03a9f4, #f441a5, #F16529, #03a9f4);
   background-size: 400%;
   cursor: pointer;
@@ -122,7 +124,8 @@ label {
   z-index: +1;
   text-transform: uppercase;
   font-weight: 700;
-  background-image: linear-gradient(to right ,#000428, #004e92);
+  background: linear-gradient(to right ,#000428, #004e92);
+  background: -webkit-linear-gradient(to right ,#000428, #004e92);
     -webkit-background-clip: text;
     color: transparent;
     @include respond(phone) {
@@ -135,6 +138,7 @@ label {
 
 .button{
   background: linear-gradient(90deg, #03a9f4, #f441a5, #03a9f4);
+  background: -webkit-linear-gradient(90deg, #03a9f4, #f441a5, #03a9f4);
   height: 6rem;
   width: 6rem;
   
