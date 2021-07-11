@@ -19,13 +19,15 @@ html {
 }
 
 .container{
-  height:100%;
   background-image: url(https://cdn.pixabay.com/photo/2015/07/02/10/13/sky-828648_960_720.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   margin-top:2rem;
   border-radius: 10px;
   opacity: 0.9;
+  @include respond(phone) {
+    height: 100%;
+  } 
 }
 //https://cdn.dribbble.com/users/619527/screenshots/4531991/neta-900-1.gif
 .header{
